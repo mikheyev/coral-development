@@ -12,8 +12,8 @@ export TEMPDIR=/genefs/MikheyevU/temp
 export TEMP=/genefs/MikheyevU/temp
 export TMP=/genefs/MikheyevU/temp
 
-a=(trimmed/adi/*_trimmed_1.fastq.gz)
-b=(trimmed/adi/*_trimmed_2.fastq.gz)
+a=(data/trimmed/adi/*_trimmed_1.fastq.gz) #18
+b=(data/trimmed/adi/*_trimmed_2.fastq.gz)
 base=$(basename ${a["SGE_TASK_ID"-1]} "_trimmed_1.fastq.gz")
 f=${a["SGE_TASK_ID"-1]}
 r=${b["SGE_TASK_ID"-1]}

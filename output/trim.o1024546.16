@@ -1,0 +1,13 @@
+TrimmomaticPE: Started with arguments: -phred33 rawdata/adi/S1_1.fastq rawdata/adi/S1_2.fastq trimmed/adi/S1_trimmed_1.fastq.gz trimmed/adi/S1_trimmed_u1.fastq.gz trimmed/adi/S1_trimmed_2.fastq.gz trimmed/adi/S1_trimmed_u2.fastq.gz ILLUMINACLIP:/apps/MikheyevU/sasha/trimmomatic/adapters/RNA-seq-Nextera.fa:2:30:10 LEADING:20 MAXINFO:30:0.8 MINLEN:30
+Multiple cores found: Using 12 threads
+Using Long Clipping Sequence: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAGCGGCCGCTCTGCGTTGATACCACTGCAATT'
+Using Long Clipping Sequence: 'CCCCCCATGTACTCTGCGTTGATACCACTGCTT'
+Using Long Clipping Sequence: 'CCCATGTACTCTGCGTTGATACCACTGCTT'
+Using Long Clipping Sequence: 'CCCCATGTACTCTGCGTTGATACCACTGCTT'
+Using Medium Clipping Sequence: 'CTGTCTCTTATACACATCT'
+Skipping duplicate Clipping Sequence: 'CCCCATGTACTCTGCGTTGATACCACTGCTT'
+Using Long Clipping Sequence: 'AAAAAAGAAAAAAGTACCGACTGCGACTCTGCGTTGATACCACTGCTT'
+Using Long Clipping Sequence: 'CCCCCATGTACTCTGCGTTGATACCACTGCTT'
+ILLUMINACLIP: Using 0 prefix pairs, 7 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Input Read Pairs: 2179043 Both Surviving: 2066269 (94.82%) Forward Only Surviving: 30857 (1.42%) Reverse Only Surviving: 45877 (2.11%) Dropped: 36040 (1.65%)
+TrimmomaticPE: Completed successfully
