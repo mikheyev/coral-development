@@ -1,7 +1,7 @@
 # An investigation of regulatory changes during the larval development of the coral *Acropora digitifera*
 
 
-The bioinformatic pipeline for read mapping, and extracting counts goes as follows. The [output](https://github.com/mikheyev/coral-development/tree/master/output) folde contains informative output form the various stages of the analysis and the gene count files. The [ref](https://github.com/mikheyev/coral-development/tree/master/ref) folder contains only a list of gene to isoform associations.
+The bioinformatic pipeline for read mapping, and extracting counts goes as follows. The [output](https://github.com/mikheyev/coral-development/tree/master/output) folde contains informative output form the various stages of the analysis and the gene count files. The [ref](https://github.com/mikheyev/coral-development/tree/master/ref) folder contains a list of gene to isoform associations, and the fasta file with the cufflinks predicted transcripts.
 
 ## trim.sh
    - adaptor and quality trimming
