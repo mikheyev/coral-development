@@ -15,7 +15,7 @@ The bioinformatic pipeline for read mapping, and extracting counts goes as follo
 ## cuffmerge.sh
    - Merge cufflinks assemblies
 
-## Now we have to associate official gene names with our cufflinks transcripts. This would have been easier, if the gff on the Marine Genomics web site was correct, as we could have used it directly in the tophat/cufflinks pipeline. Instead, it seems to refer to an earlier assembly version. So, we use blast to match up our transcripts with the canonical gene annotations.
+Now we have to associate official gene names with our cufflinks transcripts. This would have been easier, if the gff on the [Marine Genomics](http://marinegenomics.oist.jp/genomes/downloads?project_id=3) web site was correct, as we could have used it directly in the tophat/cufflinks pipeline. Instead, it seems to refer to an earlier assembly version. So, we use blast to match up our transcripts with the canonical gene annotations.
 
 	cd ref
 	makeblastdb -in adi_v1.0.1.cdna.fa -out adi_v1.0.1.cdna -dbtype nucl
@@ -23,15 +23,17 @@ The bioinformatic pipeline for read mapping, and extracting counts goes as follo
 	cd ..
 	python rename.py 
 
-Make rsem reference using official gene ids added to fasta files, and isoform inferred by cufflinks
+Make rsem reference using official gene ids added to fasta files, and isoform inferred by cufflinks.
 
-   cd ref
-   rsem-prepare-reference --transcript-to-gene-map transcript-to-gene-map.txt --no-polyA adi_cufflinks_transcripts_renamed.fa adi_cufflinks_transcripts_renamed
-   cd ..
+	cd ref
+	rsem-prepare-reference --transcript-to-gene-map transcript-to-gene-map.txt --no-polyA adi_cufflinks_transcripts_renamed.fa adi_cufflinks_transcripts_renamed
+	cd ..
 
 ## rsem.sh
    - Re-map reads to extracted transcripts using RSEM
 
+Collect isoform and gene counts using **collect.py**
 
-
+	python collect.py genes data/mapped/adi/rsem/ > output/adi_gene_counts.csv
+	python collect.py isoforms data/mapped/adi/rsem/ > output/adi_isoform_counts.csv
 
