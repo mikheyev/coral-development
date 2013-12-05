@@ -2,13 +2,12 @@
 #$ -q long
 #$ -j y
 #$ -cwd
-#$ -N tophat
-#$ -l h_vmem=20G
-#$ -l virtual_free=20G
-
+#$ -l h_vmem=30G
+#$ -l virtual_free=30G
+#$ -N rs
 . $HOME/.bashrc
-
 export TEMPDIR=/genefs/MikheyevU/temp
+export TMPDIR=/genefs/MikheyevU/temp
 export TEMP=/genefs/MikheyevU/temp
 export TMP=/genefs/MikheyevU/temp
 
@@ -18,4 +17,4 @@ base=$(basename ${a["SGE_TASK_ID"-1]} "_trimmed_1.fastq")
 f=${a["SGE_TASK_ID"-1]}
 r=${b["SGE_TASK_ID"-1]}
 
-tophat2 --b2-very-sensitive -z pigz -p 8 -o data/mapped/adi/$base ref/adi_genome $f $r 
+rsem-calculate-expression -p 12 --bowtie-n 3 --paired-end $f $r ref/adi_cufflinks_transcripts_renamed data/mapped/adi/rsem/$base
