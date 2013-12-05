@@ -1,7 +1,7 @@
 # An investigation of regulatory changes during the larval development of the coral *Acropora digitifera*
 
 
-The bioinformatic pipeline for read mapping, and extracting counts goes as follows.
+The bioinformatic pipeline for read mapping, and extracting counts goes as follows. The [output](https://github.com/mikheyev/coral-development/tree/master/output) folde contains informative output form the various stages of the analysis and the gene count files.
 
 ## trim.sh
    - adaptor and quality trimming
@@ -34,6 +34,6 @@ Make rsem reference using official gene ids added to fasta files, and isoform in
 
 Collect isoform and gene counts using **collect.py**
 
-	python collect.py genes data/mapped/adi/rsem/ > output/adi_gene_counts.csv
-	python collect.py isoforms data/mapped/adi/rsem/ > output/adi_isoform_counts.csv
+	python collect.py genes data/mapped/adi/rsem/ | gzip > output/adi_gene_counts.csv.gz
+	python collect.py isoforms data/mapped/adi/rsem/ | gzip > output/adi_isoform_counts.csv.gz
 
